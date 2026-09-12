@@ -10,7 +10,7 @@
             if (file) {
                 const reader = new FileReader();
                 reader.onload = () => {
-                    window.location.href = "data:image;base64," + reader.result.split(",")[1];
+                    window.location.replace("data:image;base64," + reader.result.split(",")[1]);
                 };
                 reader.readAsDataURL(file);
             }
