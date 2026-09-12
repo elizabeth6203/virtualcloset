@@ -11,7 +11,10 @@
                 const reader = new FileReader();
                 reader.onload = () => {
                     const base64 = reader.result.split(",")[1];
-                    window.location.replace("https://elizabeth6203.github.io/virtualcloset/photo_picker.html?img=" + encodeURIComponent(base64));
+                    window.location.replace(
+                        "https://elizabeth6203.github.io/virtualcloset/photo_picker.html?img=" 
+                    + encodeURIComponent(base64)
+                    );
                 };
                 reader.readAsDataURL(file);
             }
