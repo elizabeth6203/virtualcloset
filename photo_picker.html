@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<body style="font-family: sans-serif; text-align: center; padding-top: 40px;">
+    <h2>Select or Take a Photo</h2>
+    <input id="fileInput" type="file" accept="image/*" capture="camera">
+    <script>
+        const input = document.getElementById('fileInput');
+        input.addEventListener('change', () => {
+            const file = input.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = () => {
+                    window.location.href = "data:image;base64," + reader.result.split(",")[1];
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+    </script>
+</body>
+</html>
